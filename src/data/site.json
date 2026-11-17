@@ -1,0 +1,17 @@
+{
+  "title": "Aqsa — Digital Marketer",
+  "description": "Digital marketer specialising in social media, Meta Ads, SEO, content strategy, lead generation and Shopify growth.",
+  "brand": "Aqsa",
+  "nav": [
+    { "id": "about", "label": "About" },
+    { "id": "expertise", "label": "Expertise" },
+    { "id": "approach", "label": "Approach" },
+    { "id": "experience", "label": "Experience" },
+    { "id": "contact", "label": "Contact" }
+  ],
+  "cta": { "label": "Let's talk", "href": "#contact" },
+  "footer": {
+    "note": "Digital Marketer",
+    "backToTop": "Back to top"
+  }
+}

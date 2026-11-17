@@ -1,0 +1,13 @@
+{
+  "eyebrow": "Contact",
+  "title": "Let's grow something together.",
+  "text": "Tell me about your brand, your goals and where you're stuck. I'll reply with honest thoughts and a clear next step.",
+  "email": "hello@yourdomain.com",
+  "responseNote": "Usually replies within 24 hours",
+  "socials": [
+    { "platform": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/your-handle" },
+    { "platform": "instagram", "label": "Instagram", "url": "https://www.instagram.com/your-handle" },
+    { "platform": "youtube", "label": "YouTube", "url": "https://www.youtube.com/@your-handle" },
+    { "platform": "facebook", "label": "Facebook", "url": "https://www.facebook.com/your-handle" }
+  ]
+}

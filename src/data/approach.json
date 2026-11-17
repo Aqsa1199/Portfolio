@@ -1,0 +1,23 @@
+{
+  "eyebrow": "Approach",
+  "title": "A clear process from first audit to steady growth.",
+  "intro": "No guesswork and no vanity metrics. Every engagement follows the same four steps, so you always know what's happening and why.",
+  "steps": [
+    {
+      "title": "Audit",
+      "text": "Review current channels, content, ads and analytics to find quick wins and the gaps holding growth back."
+    },
+    {
+      "title": "Strategy",
+      "text": "Define goals, audiences, content pillars and channel mix, with a plan you can see and sign off."
+    },
+    {
+      "title": "Launch",
+      "text": "Create content, set up campaigns and optimise pages, publishing on a consistent, agreed schedule."
+    },
+    {
+      "title": "Measure & scale",
+      "text": "Track results, report clearly and double down on what performs while cutting what doesn't."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "eyebrow": "Expertise",
+  "title": "Twelve skills, one growth system.",
+  "intro": "Each discipline feeds the others. Social builds attention, search captures intent, paid media scales what works and analytics keeps it all accountable.",
+  "groups": [
+    {
+      "title": "Social & Community",
+      "summary": "Building audiences that recognise, trust and talk about the brand.",
+      "skills": [
+        {
+          "name": "Social Media Management",
+          "description": "Day-to-day planning, scheduling and publishing across platforms with a consistent brand voice."
+        },
+        {
+          "name": "Social Media Marketing",
+          "description": "Campaigns and content formats designed to grow reach, engagement and followers with intent."
+        },
+        {
+          "name": "Community Management",
+          "description": "Replying, moderating and nurturing conversations so followers become loyal advocates."
+        },
+        {
+          "name": "LinkedIn Marketing & Outreach",
+          "description": "Profile positioning, thought-leadership content and targeted outreach to decision makers."
+        }
+      ]
+    },
+    {
+      "title": "Paid & Performance",
+      "summary": "Turning budget into measurable leads and sales.",
+      "skills": [
+        {
+          "name": "Meta Ads (Facebook & Instagram)",
+          "description": "Audience research, creative testing and campaign structure built around cost per result."
+        },
+        {
+          "name": "Lead Generation",
+          "description": "Funnels, lead magnets and forms that capture qualified prospects, not just clicks."
+        },
+        {
+          "name": "E-commerce & Shopify Promotion",
+          "description": "Product launches, catalogue ads and promotions that drive traffic and sales to Shopify stores."
+        }
+      ]
+    },
+    {
+      "title": "Search & Content",
+      "summary": "Being found at the exact moment people are looking.",
+      "skills": [
+        {
+          "name": "YouTube SEO",
+          "description": "Keyword-led titles, descriptions, tags and thumbnails that help videos rank and get watched."
+        },
+        {
+          "name": "Website SEO",
+          "description": "On-page optimisation, keyword mapping and technical fixes that grow organic traffic."
+        },
+        {
+          "name": "Content Strategy & Planning",
+          "description": "Content pillars, calendars and briefs that keep every channel on-message and on schedule."
+        }
+      ]
+    },
+    {
+      "title": "Growth & Insight",
+      "summary": "Connecting marketing activity to business outcomes.",
+      "skills": [
+        {
+          "name": "Business Development",
+          "description": "Identifying opportunities, building partnerships and opening new revenue channels."
+        },
+        {
+          "name": "Analytics & Reporting",
+          "description": "Clear dashboards and reports that turn platform data into decisions."
+        }
+      ]
+    }
+  ]
+}
