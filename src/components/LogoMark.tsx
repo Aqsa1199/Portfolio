@@ -27,7 +27,7 @@ export function LogoMark({
         alt={`${name} logo`}
         width={96}
         height={96}
-        className={`shrink-0 rounded-full border border-line bg-paper object-cover ${className}`}
+        className={`shrink-0 rounded-full border border-line bg-white object-contain ${className}`}
       />
     );
   }
