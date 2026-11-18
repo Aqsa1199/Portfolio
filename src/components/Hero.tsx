@@ -35,7 +35,7 @@ export function Hero({ profile }: { profile: Profile }) {
           </h1>
 
           <div
-            className="rise relative aspect-square w-40 shrink-0 overflow-hidden rounded-full sm:w-52 md:w-[clamp(14rem,26vw,22rem)]"
+            className="rise relative aspect-square w-40 shrink-0 overflow-hidden rounded-xl sm:w-52 md:w-[clamp(14rem,26vw,22rem)]"
             style={{ animationDelay: "200ms" }}
           >
             <Image
