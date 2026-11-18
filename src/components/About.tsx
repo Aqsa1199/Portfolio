@@ -7,11 +7,11 @@ export function About({ data, number, name }: { data: AboutData; number: string;
   return (
     <section id="about" className="scroll-mt-20 py-24 md:py-36">
       <Container className="grid gap-14 md:grid-cols-12">
-        <Reveal className="md:col-span-4">
-          <div className="relative aspect-4/5 w-full max-w-sm overflow-hidden rounded-[1.75rem] bg-wine">
+        <Reveal className="md:col-span-4 md:self-center">
+          <div className="relative aspect-4/5 w-full max-w-sm overflow-hidden rounded-[1.75rem] bg-paper">
             <Image
               src={data.portrait}
-              alt={name}
+              alt={data.portraitAlt ?? name}
               fill
               sizes="(min-width: 768px) 30vw, 90vw"
               className="object-cover"

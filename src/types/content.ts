@@ -35,6 +35,8 @@ export type About = SectionCopy & {
   paragraphs: string[];
   /** Path inside /public, e.g. "/aqsa.png". */
   portrait: string;
+  /** Describes the image; falls back to the name. */
+  portraitAlt?: string;
   principles: { title: string; text: string }[];
 };
 
