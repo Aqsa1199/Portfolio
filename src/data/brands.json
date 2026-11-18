@@ -8,15 +8,27 @@
       "place": "Global · a Genius Mind Zone product",
       "role": "Product marketing",
       "period": "Nov 2026 — Present",
-      "logo": null,
+      "logo": "/work/creatorsaver.png",
       "stat": null,
       "challenge": "A new TikTok and Instagram analytics tool with no social presence and no marketing.",
       "outcome": "Facebook Page set up from scratch, three ad videos ready for Facebook and Instagram, and ongoing marketing to bring creators to the product.",
       "links": [
-        { "label": "Website", "href": "https://creatorsaver.com" },
-        { "label": "Instagram", "href": "https://instagram.com/creatorsaver" },
-        { "label": "YouTube", "href": "https://youtube.com/@creatorsaver" },
-        { "label": "TikTok", "href": "https://tiktok.com/@creatorsaver" }
+        {
+          "label": "Website",
+          "href": "https://creatorsaver.com"
+        },
+        {
+          "label": "Instagram",
+          "href": "https://instagram.com/creatorsaver"
+        },
+        {
+          "label": "YouTube",
+          "href": "https://youtube.com/@creatorsaver"
+        },
+        {
+          "label": "TikTok",
+          "href": "https://tiktok.com/@creatorsaver"
+        }
       ]
     },
     {
@@ -24,44 +36,67 @@
       "place": "Facebook page",
       "role": "Social Media Manager",
       "period": null,
-      "logo": null,
-      "stat": { "value": "2,500+", "label": "followers from zero" },
+      "logo": "/work/nixo-mark.png",
+      "stat": {
+        "value": "2,500+",
+        "label": "followers from zero"
+      },
       "challenge": "No Facebook presence. The page started from zero.",
       "outcome": "Built the page and grew it to 2,500+ followers with content, posting and engagement.",
-      "links": [{ "label": "Facebook", "href": "https://facebook.com/NIXO" }]
+      "links": [
+        {
+          "label": "Facebook",
+          "href": "https://facebook.com/NIXO"
+        }
+      ]
     },
     {
       "name": "Humi's Frozen Food",
       "place": "United Kingdom · managed from Pakistan",
       "role": "Social Media Manager",
       "period": null,
-      "logo": null,
+      "logo": "/work/humis.png",
       "stat": null,
       "challenge": "A frozen food brand that needed regular, premium-looking content to sell its products.",
       "outcome": "Social posts and promotional videos made from the brand's real product photos.",
-      "links": [{ "label": "Facebook", "href": "https://facebook.com/Humis-Frozen-Food" }]
+      "links": [
+        {
+          "label": "Facebook",
+          "href": "https://facebook.com/Humis-Frozen-Food"
+        }
+      ]
     },
     {
       "name": "No.5 Immigration Lawyers",
       "place": "Facebook page",
       "role": "Social Media Manager",
       "period": null,
-      "logo": null,
+      "logo": "/work/Immigration_lawyers.png",
       "stat": null,
       "challenge": "An immigration law firm that needed a professional social presence to reach clients.",
       "outcome": "Full page management, content creation and regular posting.",
-      "links": [{ "label": "Facebook", "href": "https://facebook.com/no5ImmigrationLawyers" }]
+      "links": [
+        {
+          "label": "Facebook",
+          "href": "https://facebook.com/no5ImmigrationLawyers"
+        }
+      ]
     },
     {
       "name": "Nagrah Law",
       "place": "Facebook page",
       "role": "Social Media Manager",
       "period": null,
-      "logo": null,
+      "logo": "/work/NLA.png",
       "stat": null,
       "challenge": "A law firm with no social media presence to reach clients.",
       "outcome": "Full page management, content creation and regular posting.",
-      "links": [{ "label": "Facebook", "href": "https://facebook.com/nagrah.law" }]
+      "links": [
+        {
+          "label": "Facebook",
+          "href": "https://facebook.com/nagrah.law"
+        }
+      ]
     },
     {
       "name": "Horizon Career Services",
@@ -72,7 +107,12 @@
       "stat": null,
       "challenge": "No Facebook presence. The page started from zero.",
       "outcome": "Page built from zero, with content, posting and audience engagement.",
-      "links": [{ "label": "Facebook", "href": "https://facebook.com/Horizoncareerserviceslimited" }]
+      "links": [
+        {
+          "label": "Facebook",
+          "href": "https://facebook.com/Horizoncareerserviceslimited"
+        }
+      ]
     },
     {
       "name": "Dashbone",
@@ -83,7 +123,12 @@
       "stat": null,
       "challenge": "No Facebook presence. The page started from zero.",
       "outcome": "Page built from zero, with content creation, posting and complete page management.",
-      "links": [{ "label": "Facebook", "href": "https://facebook.com/dashbone.official" }]
+      "links": [
+        {
+          "label": "Facebook",
+          "href": "https://facebook.com/dashbone.official"
+        }
+      ]
     },
     {
       "name": "Property Hub",
@@ -94,18 +139,28 @@
       "stat": null,
       "challenge": "No Facebook presence. The page started from zero.",
       "outcome": "Page built from zero, with content, posting and community engagement.",
-      "links": [{ "label": "Facebook", "href": "https://facebook.com/propertyhub086" }]
+      "links": [
+        {
+          "label": "Facebook",
+          "href": "https://facebook.com/propertyhub086"
+        }
+      ]
     },
     {
       "name": "Mr. Chef Bakery",
       "place": "Facebook page",
       "role": "Social Media Manager",
       "period": null,
-      "logo": null,
+      "logo": "/work/chef.png",
       "stat": null,
       "challenge": "A bakery with no regular social media content.",
       "outcome": "Page management, content creation and regular posting.",
-      "links": [{ "label": "Facebook", "href": "https://facebook.com/Mr.chef.Bakery" }]
+      "links": [
+        {
+          "label": "Facebook",
+          "href": "https://facebook.com/Mr.chef.Bakery"
+        }
+      ]
     }
   ]
 }

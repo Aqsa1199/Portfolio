@@ -49,7 +49,15 @@ export type ExperienceItem = {
   company: string;
   /** Free text, e.g. "2023 — Present" */
   period: string;
+  /** "YYYY-MM", used to work out time in role. */
+  start?: string;
+  /** "YYYY-MM", or null while the role is current. */
+  end?: string | null;
   location?: string;
+  /** Path inside /public, e.g. "/work/gmz.png". Null shows the initials instead. */
+  logo?: string | null;
+  /** Keys understood by SocialIcon, e.g. "facebook", "instagram", "linkedin". */
+  platforms?: string[];
   summary: string;
   /** "What they were facing" */
   challenge?: string;

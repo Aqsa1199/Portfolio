@@ -1,39 +1,7 @@
-import Image from "next/image";
-import type { Brand, Brands as BrandsData } from "@/types/content";
+import type { Brands as BrandsData } from "@/types/content";
+import { LogoMark } from "./LogoMark";
 import { Reveal } from "./Reveal";
 import { ArrowIcon, Container, Eyebrow, SectionTitle } from "./ui";
-
-function initials(name: string): string {
-  return name
-    .replace(/[^A-Za-z0-9 ]/g, "")
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((word) => word[0].toUpperCase())
-    .join("");
-}
-
-function BrandLogo({ brand }: { brand: Brand }) {
-  if (brand.logo) {
-    return (
-      <Image
-        src={brand.logo}
-        alt={`${brand.name} logo`}
-        width={56}
-        height={56}
-        className="h-14 w-14 rounded-full border border-line object-cover"
-      />
-    );
-  }
-  return (
-    <span
-      aria-hidden
-      className="flex h-14 w-14 items-center justify-center rounded-full bg-wine font-display text-xl text-paper"
-    >
-      {initials(brand.name)}
-    </span>
-  );
-}
 
 export function Brands({ data, number }: { data: BrandsData; number: string }) {
   if (data.items.length === 0) return null;
@@ -61,7 +29,7 @@ export function Brands({ data, number }: { data: BrandsData; number: string }) {
                 className="flex h-full flex-col rounded-2xl border border-line bg-paper p-7 transition-colors duration-300 hover:border-wine"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <BrandLogo brand={brand} />
+                  <LogoMark name={brand.name} logo={brand.logo} className="h-16 w-16 text-2xl" />
                   {brand.stat && (
                     <p className="text-right">
                       <span className="block font-display text-3xl leading-none text-raspberry">
