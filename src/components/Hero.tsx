@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Profile } from "@/types/content";
 import { ArrowIcon, Container } from "./ui";
 
@@ -17,20 +18,36 @@ export function Hero({ profile }: { profile: Profile }) {
           {profile.name} <span className="text-line">/</span> {profile.role}
         </p>
 
-        <h1
-          className="rise mt-3 max-w-[13ch] font-display text-[clamp(3rem,9vw,8rem)] leading-[0.94] tracking-[-0.035em] text-ink"
-          style={{ animationDelay: "140ms" }}
-        >
-          {profile.headline.map((segment, i) =>
-            segment.accent ? (
-              <em key={i} className="font-display text-raspberry italic">
-                {segment.text}
-              </em>
-            ) : (
-              <span key={i}>{segment.text}</span>
-            ),
-          )}
-        </h1>
+        <div className="mt-3 flex flex-col-reverse gap-8 md:flex-row md:items-center md:justify-between md:gap-12">
+          <h1
+            className="rise max-w-[13ch] font-display text-[clamp(3rem,9vw,8rem)] leading-[0.94] tracking-[-0.035em] text-ink"
+            style={{ animationDelay: "140ms" }}
+          >
+            {profile.headline.map((segment, i) =>
+              segment.accent ? (
+                <em key={i} className="font-display text-raspberry italic">
+                  {segment.text}
+                </em>
+              ) : (
+                <span key={i}>{segment.text}</span>
+              ),
+            )}
+          </h1>
+
+          <div
+            className="rise relative aspect-square w-40 shrink-0 overflow-hidden rounded-full sm:w-52 md:w-[clamp(14rem,26vw,22rem)]"
+            style={{ animationDelay: "200ms" }}
+          >
+            <Image
+              src="/aqsa.png"
+              alt={profile.name}
+              fill
+              priority
+              sizes="(min-width: 768px) 26vw, 13rem"
+              className="object-cover"
+            />
+          </div>
+        </div>
 
         <div
           className="rise mt-14 grid gap-12 border-t border-line pt-10 md:mt-20 md:grid-cols-12"
