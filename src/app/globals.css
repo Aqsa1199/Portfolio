@@ -1,13 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #F7F1EC;
-  --sand: #EFE4DC;
-  --line: #E3D6CF;
-  --ink: #2A1520;
-  --muted: #6E5A62;
-  --wine: #6E1530;
-  --raspberry: #B0164F;
+  --paper: #FFFCFB;
+  --sand: #FBF1F3;
+  --line: #EFD3DA;
+  --ink: #221418;
+  --muted: #6B5A5F;
+  --wine: #6E0E2B;
+  --wine-deep: #4A081B;
+  --raspberry: #8C1D3F;
+  /* Text-safe gold for light grounds; the light one is for dark grounds. */
+  --gold: #96701F;
+  --gold-light: #D9B45F;
+  --blush: #F0B7C6;
 }
 
 @theme inline {
@@ -18,6 +23,10 @@
   --color-muted: var(--muted);
   --color-wine: var(--wine);
   --color-raspberry: var(--raspberry);
+  --color-wine-deep: var(--wine-deep);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-blush: var(--blush);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-fraunces), Georgia, serif;
@@ -94,13 +103,95 @@ body {
   animation-play-state: paused;
 }
 
+/* About portrait: unveils when its <Reveal> shows, then floats and twinkles. */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-0.6deg);
+  }
+}
+
+@keyframes float-back {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(6px, 8px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.4) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(90deg);
+  }
+}
+
+.portrait-float {
+  animation: float 7s ease-in-out infinite;
+}
+
+.portrait-back {
+  animation: float-back 7s ease-in-out infinite;
+}
+
+.twinkle {
+  animation: twinkle 3.2s ease-in-out infinite both;
+}
+
+.portrait-tilt {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (scripting: enabled) {
+  .portrait-frame {
+    clip-path: inset(100% 0 0 0 round 1.75rem);
+    transition: clip-path 1.2s cubic-bezier(0.7, 0, 0.2, 1) 0.15s;
+  }
+  .portrait-frame img {
+    transform: scale(1.18);
+    transition: transform 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s;
+  }
+  .reveal[data-shown="true"] .portrait-frame {
+    clip-path: inset(0 0 0 0 round 1.75rem);
+  }
+  .reveal[data-shown="true"] .portrait-frame img {
+    transform: scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
   .rise,
-  .marquee-track {
+  .marquee-track,
+  .portrait-float,
+  .portrait-back,
+  .twinkle {
     animation: none;
+  }
+  .twinkle {
+    opacity: 0.8;
+  }
+  .portrait-tilt {
+    transform: none;
+  }
+  .portrait-frame,
+  .portrait-frame img {
+    clip-path: none !important;
+    transform: none !important;
+    transition: none;
   }
   .reveal {
     opacity: 1;

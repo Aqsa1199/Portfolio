@@ -1,61 +1,124 @@
+import type { ReactNode } from "react";
 import type { Contact as ContactData } from "@/types/content";
 import { Reveal } from "./Reveal";
 import { ArrowIcon, Container, Eyebrow, SocialIcon } from "./ui";
 
-export function Contact({ data, number }: { data: ContactData; number: string }) {
+type Card = { key: string; label: string; value: string; href: string; icon: ReactNode; external: boolean };
+
+const stroke = {
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 2,
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+} as const;
+
+function MailIcon({ className = "" }: { className?: string }) {
   return (
-    <section id="contact" className="scroll-mt-20 py-16 md:py-24">
-      <Container>
-        <Reveal className="relative overflow-hidden rounded-4xl bg-wine px-6 py-14 text-paper sm:px-10 md:px-16 md:py-24">
-          <span
-            aria-hidden
-            className="pointer-events-none absolute -top-24 -right-10 font-display text-[22rem] leading-none text-paper/6 italic select-none"
-          >
-            &amp;
-          </span>
+    <svg viewBox="0 0 24 24" aria-hidden className={className} {...stroke}>
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 7-10 6L2 7" />
+    </svg>
+  );
+}
 
-          <div className="relative">
-            <Eyebrow number={number} tone="inverse">
-              {data.eyebrow}
-            </Eyebrow>
-            <h2 className="mt-8 max-w-[14ch] font-display text-[clamp(2.75rem,7vw,6.5rem)] leading-[0.98] tracking-[-0.03em] text-balance">
-              {data.title}
-            </h2>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-paper/75">{data.text}</p>
+function SendIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden className={className} {...stroke}>
+      <path d="M22 2 11 13" />
+      <path d="M22 2 15 22l-4-9-9-4 20-7z" />
+    </svg>
+  );
+}
 
-            <a
-              href={`mailto:${data.email}`}
-              className="group mt-12 inline-flex max-w-full items-center gap-4 border-b border-paper/30 pb-3 font-display text-[clamp(1.5rem,4vw,3rem)] tracking-tight transition-colors hover:border-paper"
-            >
-              <span className="truncate">{data.email}</span>
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-paper text-wine transition-transform duration-300 group-hover:rotate-45">
-                <ArrowIcon className="h-5 w-5" />
-              </span>
-            </a>
+export function Contact({ data, number }: { data: ContactData; number: string }) {
+  const cards: Card[] = [
+    {
+      key: "email",
+      label: "Email",
+      value: data.email,
+      href: `mailto:${data.email}`,
+      icon: <MailIcon className="h-5 w-5" />,
+      external: false,
+    },
+    ...data.socials.map((social) => ({
+      key: social.platform,
+      label: social.label,
+      value: social.handle ?? social.url.replace(/^https?:\/\/(www\.)?/, ""),
+      href: social.url,
+      icon: <SocialIcon platform={social.platform} className="h-5 w-5" />,
+      external: true,
+    })),
+    ...(data.project
+      ? [
+          {
+            key: "project",
+            label: data.project.label,
+            value: data.project.text,
+            href: `mailto:${data.email}?subject=${encodeURIComponent(data.project.subject)}`,
+            icon: <SendIcon className="h-5 w-5" />,
+            external: false,
+          },
+        ]
+      : []),
+  ];
 
-            <div className="mt-16 flex flex-col gap-8 border-t border-paper/20 pt-8 md:flex-row md:items-center md:justify-between">
-              <ul className="flex flex-wrap gap-2">
-                {data.socials.map((social) => (
-                  <li key={social.platform}>
-                    <a
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex h-11 items-center gap-2 rounded-full border border-paper/25 px-4 text-sm transition-colors hover:bg-paper hover:text-wine"
-                    >
-                      <SocialIcon platform={social.platform} className="h-4 w-4" />
-                      {social.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <p className="flex items-center gap-2 text-sm text-paper/70">
-                <span className="h-1.5 w-1.5 rounded-full bg-paper" aria-hidden />
-                {data.responseNote}
-              </p>
-            </div>
-          </div>
+  return (
+    <section
+      id="contact"
+      className="relative scroll-mt-20 overflow-hidden bg-wine-deep py-24 text-[#F9E9ED] md:py-32"
+    >
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -right-6 -bottom-36 font-display text-[24rem] leading-none text-white/5 italic select-none"
+      >
+        &amp;
+      </span>
+
+      <Container className="relative">
+        <Reveal className="max-w-3xl">
+          <Eyebrow number={number} tone="inverse">
+            {data.eyebrow}
+          </Eyebrow>
+          <h2 className="mt-6 font-display text-[clamp(2.25rem,5vw,4.25rem)] leading-[1.02] tracking-[-0.02em] text-balance text-white">
+            {data.title}
+            {data.titleAccent && (
+              <>
+                {" "}
+                <em className="text-blush italic">{data.titleAccent}</em>
+              </>
+            )}
+          </h2>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#EBC6D0]">{data.text}</p>
         </Reveal>
+
+        <ul className="mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
+          {cards.map((card, i) => (
+            <li key={card.key} className="min-w-0">
+              <Reveal delay={i * 70} className="h-full">
+                <a
+                  href={card.href}
+                  {...(card.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="group flex h-full min-h-[4.75rem] items-center gap-4 rounded-2xl border border-white/20 bg-white/6 px-5 py-5 transition-colors duration-300 hover:border-white/40 hover:bg-white/12"
+                >
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-wine-deep transition-transform duration-300 group-hover:scale-105">
+                    {card.icon}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-semibold text-white">{card.label}</span>
+                    <span className="block truncate text-sm text-[#EBC6D0]">{card.value}</span>
+                  </span>
+                  <ArrowIcon className="h-4 w-4 shrink-0 text-gold-light opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
+                </a>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-10 flex items-center gap-2 text-sm text-[#EBC6D0]">
+          <span className="h-1.5 w-1.5 rounded-full bg-gold-light" aria-hidden />
+          {data.responseNote}
+        </p>
       </Container>
     </section>
   );

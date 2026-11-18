@@ -4,19 +4,53 @@
   "availability": "Open to new projects",
   "location": "Working remotely, worldwide",
   "headline": [
-    { "text": "Marketing that makes people " },
-    { "text": "stop,", "accent": true },
-    { "text": " " },
-    { "text": "click", "accent": true },
-    { "text": " and " },
-    { "text": "stay.", "accent": true }
+    {
+      "text": "Marketing that makes people "
+    },
+    {
+      "text": "stop,",
+      "accent": true
+    },
+    {
+      "text": " "
+    },
+    {
+      "text": "click",
+      "accent": true
+    },
+    {
+      "text": " and "
+    },
+    {
+      "text": "stay.",
+      "accent": true
+    }
   ],
   "intro": "I help brands grow across social, search and paid media, pairing creative content with data-backed strategy so every post, ad and page works toward a clear business goal.",
-  "primaryCta": { "label": "Start a project", "href": "#contact" },
-  "secondaryCta": { "label": "Explore expertise", "href": "#expertise" },
+  "photoChip": {
+    "title": "Social · Search · Paid Media",
+    "text": "Meta, YouTube, LinkedIn and Google, run as one system."
+  },
+  "primaryCta": {
+    "label": "Start a project",
+    "href": "#contact"
+  },
+  "secondaryCta": {
+    "label": "Explore expertise",
+    "href": "#expertise"
+  },
   "highlights": [
-    { "label": "Channels", "value": "Meta, YouTube, LinkedIn, Google Search" },
-    { "label": "Focus", "value": "Growth, leads and community" },
-    { "label": "Commerce", "value": "Shopify store promotion" }
+    {
+      "label": "Channels",
+      "value": "Meta, YouTube, LinkedIn, Google Search"
+    },
+    {
+      "label": "Focus",
+      "value": "Growth, leads and community"
+    },
+    {
+      "label": "Commerce",
+      "value": "Shopify store promotion"
+    }
   ]
 }

@@ -20,6 +20,8 @@ export type Profile = {
   location: string;
   headline: HeadlineSegment[];
   intro: string;
+  /** Caption card floating over the hero photo. */
+  photoChip?: { title: string; text: string };
   primaryCta: Link;
   secondaryCta: Link;
   highlights: { label: string; value: string }[];
@@ -87,11 +89,21 @@ export type Brand = {
 
 export type Brands = SectionCopy & { items: Brand[] };
 
-export type Social = { platform: string; label: string; url: string };
+export type Social = {
+  platform: string;
+  label: string;
+  url: string;
+  /** Shown under the label, e.g. "@aqsagulammustafa". */
+  handle?: string;
+};
 
 export type Contact = SectionCopy & {
+  /** Italic accent that follows the title, e.g. "something together." */
+  titleAccent?: string;
   text: string;
   email: string;
   responseNote: string;
   socials: Social[];
+  /** Last card: an email with a preset subject. */
+  project?: { label: string; text: string; subject: string };
 };

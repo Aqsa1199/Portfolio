@@ -1,7 +1,6 @@
 import type { Skills } from "@/types/content";
 import { Reveal } from "./Reveal";
-import { SkillGroup } from "./SkillGroup";
-import { ArrowIcon, Container, Eyebrow, SectionTitle } from "./ui";
+import { Container, Eyebrow, SectionTitle } from "./ui";
 
 export function Expertise({ data, number }: { data: Skills; number: string }) {
   // Running skill number across groups: group 2 starts where group 1 ended.
@@ -10,63 +9,54 @@ export function Expertise({ data, number }: { data: Skills; number: string }) {
   );
 
   return (
-    <section id="expertise" className="scroll-mt-20 pb-24 md:pb-36">
+    <section id="expertise" className="scroll-mt-20 bg-sand py-24 md:py-32">
       <Container>
-        <Reveal className="grid gap-8 md:grid-cols-12 md:items-end">
-          <div className="md:col-span-7">
-            <Eyebrow number={number}>{data.eyebrow}</Eyebrow>
-            <SectionTitle className="mt-6">{data.title}</SectionTitle>
-          </div>
+        <Reveal className="max-w-3xl">
+          <Eyebrow number={number}>{data.eyebrow}</Eyebrow>
+          <SectionTitle className="mt-6">{data.title}</SectionTitle>
           {data.intro && (
-            <p className="text-lg leading-relaxed text-muted md:col-span-4 md:col-start-9">
-              {data.intro}
-            </p>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{data.intro}</p>
           )}
         </Reveal>
 
-        <div className="mt-16 md:mt-24">
+        <div className="mt-14 grid gap-5 md:mt-16 md:grid-cols-2">
           {data.groups.map((group, groupIndex) => (
-            <SkillGroup
+            <Reveal
               key={group.title}
-              letter={String.fromCharCode(65 + groupIndex)}
-              title={group.title}
-              summary={group.summary}
-              count={group.skills.length}
+              delay={(groupIndex % 2) * 110}
+              className="group/card h-full"
             >
-              <ul>
-                {group.skills.map((skill, i) => {
-                  const counter = offsets[groupIndex] + i + 1;
-                  return (
+              <article className="h-full rounded-[1.125rem] border border-line bg-paper px-6 pt-7 pb-3 transition-[box-shadow,border-color,translate] duration-500 hover:-translate-y-1 hover:border-raspberry/40 hover:shadow-[0_24px_50px_-24px_rgb(74_8_27/0.35)] md:px-8 md:pt-8">
+                <header className="mb-2 flex items-center gap-4 border-b-2 border-wine pb-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-wine font-display text-2xl text-paper transition-transform duration-500 group-hover/card:rotate-[-8deg] group-hover/card:scale-105">
+                    {String.fromCharCode(65 + groupIndex)}
+                  </span>
+                  <div>
+                    <h3 className="font-display text-2xl tracking-tight text-ink">{group.title}</h3>
+                    <p className="text-sm leading-relaxed text-muted">{group.summary}</p>
+                  </div>
+                </header>
+
+                <ul>
+                  {group.skills.map((skill, i) => (
                     <li
                       key={skill.name}
-                      data-skill-row
-                      className="group/row transition-opacity duration-500 group-data-[stuck=true]/sec:opacity-45 data-[active=true]:opacity-100!"
+                      className="border-b border-dashed border-line py-4 last:border-b-0"
                     >
-                      <Reveal delay={i * 70}>
-                        <div
-                          className={`group grid grid-cols-[2.5rem_1fr_auto] gap-x-4 border-b border-line pb-7 ${i === 0 ? "" : "pt-7"} md:grid-cols-[3.5rem_1fr_auto]`}
-                        >
-                          <span className="pt-1.5 font-mono text-sm text-muted transition-colors duration-500 group-hover:text-raspberry group-data-[active=true]/row:text-raspberry">
-                            {String(counter).padStart(2, "0")}
-                          </span>
-                          <div>
-                            <h4 className="text-xl font-medium tracking-tight text-ink transition-colors duration-500 group-hover:text-wine group-data-[active=true]/row:text-wine md:text-2xl">
-                              {skill.name}
-                            </h4>
-                            <p className="mt-2 max-w-xl leading-relaxed text-muted">
-                              {skill.description}
-                            </p>
-                          </div>
-                          <span className="mt-1 flex h-9 w-9 items-center justify-center rounded-full border border-line text-muted transition-all duration-500 group-hover:border-raspberry group-hover:bg-raspberry group-hover:text-paper group-data-[active=true]/row:rotate-45 group-data-[active=true]/row:border-raspberry group-data-[active=true]/row:bg-raspberry group-data-[active=true]/row:text-paper">
-                            <ArrowIcon className="h-4 w-4" />
-                          </span>
-                        </div>
-                      </Reveal>
+                      <h4 className="flex items-baseline gap-3 font-semibold text-ink">
+                        <span className="font-display text-[0.95rem] text-gold italic">
+                          {String(offsets[groupIndex] + i + 1).padStart(2, "0")}
+                        </span>
+                        {skill.name}
+                      </h4>
+                      <p className="mt-1 text-[0.95rem] leading-relaxed text-muted">
+                        {skill.description}
+                      </p>
                     </li>
-                  );
-                })}
-              </ul>
-            </SkillGroup>
+                  ))}
+                </ul>
+              </article>
+            </Reveal>
           ))}
         </div>
       </Container>

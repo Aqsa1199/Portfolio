@@ -35,17 +35,32 @@ export function Hero({ profile }: { profile: Profile }) {
           </h1>
 
           <div
-            className="rise relative aspect-square w-40 shrink-0 overflow-hidden rounded-xl sm:w-52 md:w-[clamp(14rem,26vw,22rem)]"
+            className="rise relative mb-6 ml-4 w-60 shrink-0 sm:w-64 md:mb-0 md:ml-0 md:w-[clamp(15rem,27vw,23rem)]"
             style={{ animationDelay: "200ms" }}
           >
-            <Image
-              src="/aqsa.png"
-              alt={profile.name}
-              fill
-              priority
-              sizes="(min-width: 768px) 26vw, 13rem"
-              className="object-cover"
+            {/* Offset tinted arch behind the photo. */}
+            <span
+              aria-hidden
+              className="absolute inset-[1.375rem_-0.875rem_-0.875rem_1.375rem] rounded-[200px_200px_22px_22px] bg-wine/15"
             />
+            <div className="relative aspect-[1/1.04] overflow-hidden rounded-[200px_200px_22px_22px] border-[6px] border-paper shadow-[0_24px_50px_rgb(74_8_27/0.18)]">
+              <Image
+                src="/aqsa.png"
+                alt={profile.name}
+                fill
+                priority
+                sizes="(min-width: 768px) 27vw, 16rem"
+                className="object-cover"
+              />
+            </div>
+            {profile.photoChip && (
+              <div className="absolute -bottom-5 -left-4 max-w-[15.5rem] rounded-2xl border border-line bg-paper px-4 py-3 sm:bottom-6 shadow-[0_14px_34px_rgb(74_8_27/0.16)] md:bottom-9 md:-left-8 md:px-5">
+                <p className="text-sm font-semibold text-wine">{profile.photoChip.title}</p>
+                <p className="mt-0.5 hidden text-xs leading-snug text-muted sm:block md:text-[0.82rem]">
+                  {profile.photoChip.text}
+                </p>
+              </div>
+            )}
           </div>
         </div>
 

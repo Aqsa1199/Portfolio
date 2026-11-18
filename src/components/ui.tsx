@@ -26,9 +26,9 @@ export function Eyebrow({
   const inverse = tone === "inverse";
   return (
     <p
-      className={`flex items-center gap-3 text-sm ${inverse ? "text-paper/70" : "text-muted"}`}
+      className={`flex items-center gap-3 text-sm tracking-[0.14em] uppercase ${inverse ? "text-[#EBC6D0]" : "text-muted"}`}
     >
-      <span className={`font-mono ${inverse ? "text-paper" : "text-raspberry"}`}>
+      <span className={`font-mono ${inverse ? "text-gold-light" : "text-gold"}`}>
         {number}
       </span>
       <span className={`h-px w-10 ${inverse ? "bg-paper/30" : "bg-line"}`} aria-hidden />

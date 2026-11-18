@@ -1,13 +1,39 @@
 {
   "eyebrow": "Contact",
-  "title": "Let's grow something together.",
+  "title": "Let's grow",
+  "titleAccent": "something together.",
   "text": "Tell me about your brand, your goals and where you're stuck. I'll reply with honest thoughts and a clear next step.",
   "email": "aqsagkasur@gmail.com",
   "responseNote": "Usually replies within 24 hours",
   "socials": [
-    { "platform": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/aqsa-mustafa-smm" },
-    { "platform": "instagram", "label": "Instagram", "url": "https://instagram.com/aqsagulammustafa" },
-    { "platform": "facebook", "label": "Facebook", "url": "https://www.facebook.com/aqsaji11" },
-    { "platform": "upwork", "label": "Upwork", "url": "https://www.upwork.com/freelancers/~012d9567dedf6a22b1" }
-  ]
+    {
+      "platform": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/aqsa-mustafa-smm",
+      "handle": "linkedin.com/in/aqsa-mustafa-smm"
+    },
+    {
+      "platform": "instagram",
+      "label": "Instagram",
+      "url": "https://instagram.com/aqsagulammustafa",
+      "handle": "@aqsagulammustafa"
+    },
+    {
+      "platform": "facebook",
+      "label": "Facebook",
+      "url": "https://www.facebook.com/aqsaji11",
+      "handle": "facebook.com/aqsaji11"
+    },
+    {
+      "platform": "upwork",
+      "label": "Upwork",
+      "url": "https://www.upwork.com/freelancers/~012d9567dedf6a22b1",
+      "handle": "Hire me on Upwork"
+    }
+  ],
+  "project": {
+    "label": "Start a project",
+    "text": "DM \"PROJECT\" for a free mini audit",
+    "subject": "Free mini audit request"
+  }
 }
