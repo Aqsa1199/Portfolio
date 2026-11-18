@@ -1,6 +1,38 @@
 {
   "eyebrow": "Experience",
   "title": "Where I've put it to work.",
-  "intro": "Roles and projects across social, paid media and search.",
-  "items": []
+  "intro": "Five years of running social media for software, textile and healthcare brands, from first post to paid campaigns.",
+  "items": [
+    {
+      "role": "Social Media Marketing Manager",
+      "company": "Genius Mind Zone Pvt Ltd",
+      "period": "Apr 2024 — Present",
+      "location": "Faisalabad, Pakistan",
+      "summary": "Running the company's complete social media presence: daily content on the LinkedIn company page and brand pages, with paid campaigns on Facebook, Instagram and LinkedIn.",
+      "challenge": "A software and IT services company that needed a consistent, professional presence bringing engagement and real leads, not just posts.",
+      "outcome": "A complete social media system: strategy, daily content, ad campaigns and reporting that turns content into engagement and engagement into leads.",
+      "tags": ["Social strategy", "Content calendars", "Paid campaigns", "Performance reporting", "Lead generation"],
+      "link": { "label": "Facebook page", "href": "https://facebook.com/geniusmindzoneofficial" }
+    },
+    {
+      "role": "Social Media Manager",
+      "company": "Turas Textiles",
+      "period": "Feb 2022 — Mar 2024",
+      "location": "Faisalabad, Pakistan",
+      "summary": "Managed the textile brand's Facebook and Instagram end to end for two years.",
+      "challenge": "Low brand visibility on social media, and online sales that needed support from social campaigns.",
+      "outcome": "Full page management, ad campaigns that lifted visibility and conversions, and an active, loyal follower community.",
+      "tags": ["Content creation", "Scheduling", "Audience engagement", "Growth tracking", "Paid ads", "E-commerce promotions"]
+    },
+    {
+      "role": "Social Media Ads Manager",
+      "company": "Little Feats Autism Centre",
+      "period": "Feb 2021 — Jan 2022",
+      "location": "Faisalabad, Pakistan",
+      "summary": "Built the centre's online presence from the ground up.",
+      "challenge": "No online presence and no way to reach parents and families online.",
+      "outcome": "A social media presence built from zero, with regular posting, ad campaigns and video content that built audience engagement.",
+      "tags": ["Daily posting", "Targeted ads", "Video editing (Filmora)", "Graphics (Canva)"]
+    }
+  ]
 }

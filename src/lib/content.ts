@@ -2,12 +2,12 @@ import siteJson from "@/data/site.json";
 import profileJson from "@/data/profile.json";
 import aboutJson from "@/data/about.json";
 import skillsJson from "@/data/skills.json";
-import approachJson from "@/data/approach.json";
 import experienceJson from "@/data/experience.json";
 import contactJson from "@/data/contact.json";
+import brandsJson from "@/data/brands.json";
 import type {
   About,
-  Approach,
+  Brands,
   Contact,
   Experience,
   NavItem,
@@ -20,16 +20,16 @@ export const site: Site = siteJson;
 export const profile: Profile = profileJson;
 export const about: About = aboutJson;
 export const skills: Skills = skillsJson;
-export const approach: Approach = approachJson;
 export const experience: Experience = experienceJson;
+export const brands: Brands = brandsJson;
 export const contact: Contact = contactJson;
 
 /** Sections hide themselves (and their nav link) when their JSON has no content. */
 const sectionHasContent: Record<string, boolean> = {
   about: about.paragraphs.length > 0,
   expertise: skills.groups.length > 0,
-  approach: approach.steps.length > 0,
   experience: experience.items.length > 0,
+  brands: brands.items.length > 0,
   contact: Boolean(contact.email),
 };
 

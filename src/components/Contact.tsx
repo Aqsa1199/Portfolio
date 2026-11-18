@@ -6,10 +6,10 @@ export function Contact({ data, number }: { data: ContactData; number: string })
   return (
     <section id="contact" className="scroll-mt-20 py-16 md:py-24">
       <Container>
-        <Reveal className="relative overflow-hidden rounded-[2rem] bg-wine px-6 py-14 text-paper sm:px-10 md:px-16 md:py-24">
+        <Reveal className="relative overflow-hidden rounded-4xl bg-wine px-6 py-14 text-paper sm:px-10 md:px-16 md:py-24">
           <span
             aria-hidden
-            className="pointer-events-none absolute -top-24 -right-10 font-display text-[22rem] leading-none text-paper/[0.06] italic select-none"
+            className="pointer-events-none absolute -top-24 -right-10 font-display text-[22rem] leading-none text-paper/6 italic select-none"
           >
             &amp;
           </span>

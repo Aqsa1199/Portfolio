@@ -1,5 +1,5 @@
 import { About } from "@/components/About";
-import { Approach } from "@/components/Approach";
+import { Brands } from "@/components/Brands";
 import { Contact } from "@/components/Contact";
 import { Experience } from "@/components/Experience";
 import { Expertise } from "@/components/Expertise";
@@ -10,7 +10,7 @@ import { Marquee } from "@/components/Marquee";
 import {
   about,
   allSkillNames,
-  approach,
+  brands,
   contact,
   experience,
   profile,
@@ -29,8 +29,8 @@ export default function Home() {
         <Marquee items={allSkillNames} />
         <About data={about} number={sectionNumber("about")} name={profile.name} />
         <Expertise data={skills} number={sectionNumber("expertise")} />
-        <Approach data={approach} number={sectionNumber("approach")} />
         <Experience data={experience} number={sectionNumber("experience")} />
+        <Brands data={brands} number={sectionNumber("brands")} />
         <Contact data={contact} number={sectionNumber("contact")} />
       </main>
       <Footer site={site} />

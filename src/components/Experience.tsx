@@ -1,6 +1,6 @@
 import type { Experience as ExperienceData } from "@/types/content";
 import { Reveal } from "./Reveal";
-import { Container, Eyebrow, SectionTitle } from "./ui";
+import { ArrowIcon, Container, Eyebrow, SectionTitle } from "./ui";
 
 export function Experience({ data, number }: { data: ExperienceData; number: string }) {
   if (data.items.length === 0) return null;
@@ -36,15 +36,21 @@ export function Experience({ data, number }: { data: ExperienceData; number: str
                 </div>
                 <div className="md:col-span-5">
                   <p className="leading-relaxed text-muted">{item.summary}</p>
-                  {item.highlights && item.highlights.length > 0 && (
-                    <ul className="mt-5 space-y-2">
-                      {item.highlights.map((h) => (
-                        <li key={h} className="flex gap-3 text-ink">
-                          <span className="mt-2.5 h-px w-4 shrink-0 bg-raspberry" aria-hidden />
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {(item.challenge || item.outcome) && (
+                    <dl className="mt-6 grid gap-4 rounded-2xl border border-line bg-sand/60 p-5 sm:grid-cols-2">
+                      {item.challenge && (
+                        <div>
+                          <dt className="text-sm text-muted">The challenge</dt>
+                          <dd className="mt-1.5 leading-relaxed text-ink">{item.challenge}</dd>
+                        </div>
+                      )}
+                      {item.outcome && (
+                        <div>
+                          <dt className="text-sm text-raspberry">What I delivered</dt>
+                          <dd className="mt-1.5 leading-relaxed text-ink">{item.outcome}</dd>
+                        </div>
+                      )}
+                    </dl>
                   )}
                   {item.tags && item.tags.length > 0 && (
                     <ul className="mt-6 flex flex-wrap gap-2">
@@ -57,6 +63,17 @@ export function Experience({ data, number }: { data: ExperienceData; number: str
                         </li>
                       ))}
                     </ul>
+                  )}
+                  {item.link && (
+                    <a
+                      href={item.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group mt-6 inline-flex items-center gap-2 text-sm text-wine transition-colors hover:text-raspberry"
+                    >
+                      {item.link.label}
+                      <ArrowIcon className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
+                    </a>
                   )}
                 </div>
               </Reveal>

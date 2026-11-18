@@ -33,11 +33,8 @@ export type SectionCopy = {
 
 export type About = SectionCopy & {
   paragraphs: string[];
-  monogram: string;
-  /** Shown on the monogram card when there's no portrait. */
-  cardCaption: string;
-  /** Path inside /public, e.g. "/portrait.jpg". Leave null to show the monogram. */
-  portrait: string | null;
+  /** Path inside /public, e.g. "/aqsa.png". */
+  portrait: string;
   principles: { title: string; text: string }[];
 };
 
@@ -47,10 +44,6 @@ export type SkillGroup = { title: string; summary: string; skills: Skill[] };
 
 export type Skills = SectionCopy & { groups: SkillGroup[] };
 
-export type Approach = SectionCopy & {
-  steps: { title: string; text: string }[];
-};
-
 export type ExperienceItem = {
   role: string;
   company: string;
@@ -58,11 +51,31 @@ export type ExperienceItem = {
   period: string;
   location?: string;
   summary: string;
-  highlights?: string[];
+  /** "What they were facing" */
+  challenge?: string;
+  /** "What I gave them" */
+  outcome?: string;
   tags?: string[];
+  link?: Link;
 };
 
 export type Experience = SectionCopy & { items: ExperienceItem[] };
+
+export type Brand = {
+  name: string;
+  place: string;
+  role: string;
+  /** Free text; null hides it. */
+  period: string | null;
+  /** Path inside /public, e.g. "/brands/nixo.jpg". Null shows the initials instead. */
+  logo: string | null;
+  stat: { value: string; label: string } | null;
+  challenge: string;
+  outcome: string;
+  links: Link[];
+};
+
+export type Brands = SectionCopy & { items: Brand[] };
 
 export type Social = { platform: string; label: string; url: string };
 

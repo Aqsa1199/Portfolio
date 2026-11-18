@@ -5,8 +5,8 @@
   "nav": [
     { "id": "about", "label": "About" },
     { "id": "expertise", "label": "Expertise" },
-    { "id": "approach", "label": "Approach" },
     { "id": "experience", "label": "Experience" },
+    { "id": "brands", "label": "Brands" },
     { "id": "contact", "label": "Contact" }
   ],
   "cta": { "label": "Let's talk", "href": "#contact" },

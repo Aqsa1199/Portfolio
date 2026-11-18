@@ -9,31 +9,13 @@ export function About({ data, number, name }: { data: AboutData; number: string;
       <Container className="grid gap-14 md:grid-cols-12">
         <Reveal className="md:col-span-4">
           <div className="relative aspect-4/5 w-full max-w-sm overflow-hidden rounded-[1.75rem] bg-wine">
-            {data.portrait ? (
-              <Image
-                src={data.portrait}
-                alt={name}
-                fill
-                sizes="(min-width: 768px) 30vw, 90vw"
-                className="object-cover"
-              />
-            ) : (
-              <>
-                <span
-                  aria-hidden
-                  className="absolute -right-6 -bottom-16 font-display text-[18rem] leading-none text-paper/10 italic select-none"
-                >
-                  {data.monogram}
-                </span>
-                <div className="absolute inset-0 flex flex-col justify-between p-7 text-paper">
-                  <span className="font-display text-7xl italic">{data.monogram}</span>
-                  <div>
-                    <p className="font-display text-2xl">{name}</p>
-                    <p className="mt-1 text-sm text-paper/70">{data.cardCaption}</p>
-                  </div>
-                </div>
-              </>
-            )}
+            <Image
+              src={data.portrait}
+              alt={name}
+              fill
+              sizes="(min-width: 768px) 30vw, 90vw"
+              className="object-cover"
+            />
           </div>
         </Reveal>
 
