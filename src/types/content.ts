@@ -44,7 +44,16 @@ export type About = SectionCopy & {
 
 export type Skill = { name: string; description: string };
 
-export type SkillGroup = { title: string; summary: string; skills: Skill[] };
+/** Which vector illustration a group's card shows. */
+export type SkillIllustration = "social" | "paid" | "search" | "growth";
+
+export type SkillGroup = {
+  title: string;
+  summary: string;
+  /** One of SkillIllustration; anything else falls back to one picked by position. */
+  illustration?: string;
+  skills: Skill[];
+};
 
 export type Skills = SectionCopy & { groups: SkillGroup[] };
 

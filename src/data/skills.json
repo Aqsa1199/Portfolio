@@ -5,6 +5,7 @@
   "groups": [
     {
       "title": "Social & Community",
+      "illustration": "social",
       "summary": "Building audiences that recognise, trust and talk about the brand.",
       "skills": [
         {
@@ -27,6 +28,7 @@
     },
     {
       "title": "Paid & Performance",
+      "illustration": "paid",
       "summary": "Turning budget into measurable leads and sales.",
       "skills": [
         {
@@ -45,6 +47,7 @@
     },
     {
       "title": "Search & Content",
+      "illustration": "search",
       "summary": "Being found at the exact moment people are looking.",
       "skills": [
         {
@@ -63,6 +66,7 @@
     },
     {
       "title": "Growth & Insight",
+      "illustration": "growth",
       "summary": "Connecting marketing activity to business outcomes.",
       "skills": [
         {
