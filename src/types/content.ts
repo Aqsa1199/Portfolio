@@ -57,6 +57,12 @@ export type SkillGroup = {
 
 export type Skills = SectionCopy & { groups: SkillGroup[] };
 
+export type PlatformLink = {
+  /** Key understood by SocialIcon, e.g. "facebook". */
+  platform: string;
+  href?: string;
+};
+
 export type ExperienceItem = {
   role: string;
   company: string;
@@ -69,8 +75,11 @@ export type ExperienceItem = {
   location?: string;
   /** Path inside /public, e.g. "/work/gmz.png". Null shows the initials instead. */
   logo?: string | null;
-  /** Keys understood by SocialIcon, e.g. "facebook", "instagram", "linkedin". */
-  platforms?: string[];
+  /**
+   * Platforms the work ran on. Either a SocialIcon key ("facebook", "instagram", "linkedin")
+   * or { platform, href } to make the icon link to that page.
+   */
+  platforms?: (string | PlatformLink)[];
   summary: string;
   /** "What they were facing" */
   challenge?: string;

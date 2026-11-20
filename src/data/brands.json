@@ -62,7 +62,7 @@
       "links": [
         {
           "label": "Facebook",
-          "href": "https://facebook.com/Humis-Frozen-Food"
+          "href": "https://www.facebook.com/profile.php?id=61587987936083"
         }
       ]
     },
@@ -103,7 +103,7 @@
       "place": "Facebook page",
       "role": "Social Media Manager",
       "period": null,
-      "logo": null,
+      "logo": "/work/horizon.png",
       "stat": null,
       "challenge": "No Facebook presence. The page started from zero.",
       "outcome": "Page built from zero, with content, posting and audience engagement.",
@@ -131,18 +131,18 @@
       ]
     },
     {
-      "name": "Property Hub",
+      "name": "Landify Ventures",
       "place": "Facebook page",
       "role": "Social Media Manager",
       "period": null,
-      "logo": null,
+      "logo": "/work/landify.png",
       "stat": null,
       "challenge": "No Facebook presence. The page started from zero.",
       "outcome": "Page built from zero, with content, posting and community engagement.",
       "links": [
         {
           "label": "Facebook",
-          "href": "https://facebook.com/propertyhub086"
+          "href": "https://www.facebook.com/landifyventures"
         }
       ]
     },

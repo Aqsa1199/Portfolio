@@ -26,9 +26,18 @@
       },
       "logo": "/work/gmz.png",
       "platforms": [
-        "facebook",
-        "instagram",
-        "linkedin"
+        {
+          "platform": "facebook",
+          "href": "https://facebook.com/geniusmindzoneofficial"
+        },
+        {
+          "platform": "instagram",
+          "href": "https://www.instagram.com/geniusmindzone"
+        },
+        {
+          "platform": "linkedin",
+          "href": "https://www.linkedin.com/company/genius-mind-zone-official"
+        }
       ]
     },
     {
@@ -51,8 +60,14 @@
       ],
       "logo": "/work/turas.png",
       "platforms": [
-        "facebook",
-        "instagram"
+        {
+          "platform": "facebook",
+          "href": "https://www.facebook.com/turastextile.com.pk/"
+        },
+        {
+          "platform": "instagram",
+          "href": "https://www.instagram.com/thetaurustextiles/"
+        }
       ]
     },
     {

@@ -1,5 +1,5 @@
 import { cacheLife } from "next/cache";
-import type { Experience as ExperienceData, ExperienceItem } from "@/types/content";
+import type { Experience as ExperienceData, ExperienceItem, PlatformLink } from "@/types/content";
 import { LogoMark } from "./LogoMark";
 import { Reveal } from "./Reveal";
 import { ArrowIcon, Container, Eyebrow, SectionTitle, SocialIcon } from "./ui";
@@ -42,7 +42,9 @@ function timeInRole(item: ExperienceItem, thisMonth: number): string | null {
 function ExperienceEntry({ item, thisMonth }: { item: ExperienceItem; thisMonth: number }) {
   const isCurrent = item.start !== undefined && item.end === null;
   const duration = timeInRole(item, thisMonth);
-  const platforms = item.platforms ?? [];
+  const platforms: PlatformLink[] = (item.platforms ?? []).map((p) =>
+    typeof p === "string" ? { platform: p } : p,
+  );
 
   return (
     <div className="grid gap-10 py-12 md:grid-cols-12 md:gap-12 md:py-16">
@@ -82,16 +84,35 @@ function ExperienceEntry({ item, thisMonth }: { item: ExperienceItem; thisMonth:
                 <dt className="text-sm text-muted">Platforms</dt>
                 <dd className="mt-2">
                   <ul className="flex gap-2">
-                    {platforms.map((platform) => (
-                      <li
-                        key={platform}
-                        title={platformNames[platform] ?? platform}
-                        className="flex h-9 w-9 items-center justify-center rounded-full border border-line bg-sand text-wine"
-                      >
-                        <SocialIcon platform={platform} className="h-4 w-4" />
-                        <span className="sr-only">{platformNames[platform] ?? platform}</span>
-                      </li>
-                    ))}
+                    {platforms.map(({ platform, href }) => {
+                      const name = platformNames[platform] ?? platform;
+                      const badge =
+                        "flex h-9 w-9 items-center justify-center rounded-full border border-line bg-sand text-wine";
+                      const icon = <SocialIcon platform={platform} className="h-4 w-4" />;
+                      return (
+                        <li key={platform}>
+                          {href ? (
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              title={`${item.company} on ${name}`}
+                              className={`${badge} transition-colors hover:border-raspberry hover:bg-raspberry hover:text-white`}
+                            >
+                              {icon}
+                              <span className="sr-only">
+                                {item.company} on {name} (opens in a new tab)
+                              </span>
+                            </a>
+                          ) : (
+                            <span title={name} className={badge}>
+                              {icon}
+                              <span className="sr-only">{name}</span>
+                            </span>
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </dd>
               </div>
