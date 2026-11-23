@@ -25,11 +25,15 @@ async function currentMonthIndex(): Promise<number> {
   return now.getFullYear() * 12 + now.getMonth();
 }
 
-/** "2 yrs 8 mos", counting both the first and last month. Null without a start date. */
+/**
+ * "2 yrs 7 mos". Ended roles count both the first and last month (Feb 2021 – Jan 2022
+ * is a full year); current roles count only months elapsed, since this month has barely begun.
+ * Null without a start date.
+ */
 function timeInRole(item: ExperienceItem, thisMonth: number): string | null {
   if (!item.start) return null;
-  const end = item.end ? monthIndex(item.end) : thisMonth;
-  const months = end - monthIndex(item.start) + 1;
+  const start = monthIndex(item.start);
+  const months = item.end ? monthIndex(item.end) - start + 1 : Math.max(thisMonth - start, 1);
   if (months < 1) return null;
   const years = Math.floor(months / 12);
   const rest = months % 12;
